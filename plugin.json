@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "id": "simkl-tracker",
+  "name": "Simkl",
+  "version": "1.0.0",
+  "category": "tracker",
+  "entrypoint": "simkl_tracker.main:handle",
+  "description": "Scrobbling and Continue Watching via Simkl.com",
+  "author": "Warp MediaCenter",
+  "homepage": "https://simkl.com",
+  "icon": "sync_outlined",
+  "host_api": { "min": 1, "max": 1 },
+  "estimated_memory_mb": 48,
+
+  "capabilities": [
+    "scrobble.start",
+    "scrobble.stop",
+    "continue_watching",
+    "item_progress",
+    "mark_watched",
+    "remove_from_continue_watching",
+    "account"
+  ],
+
+  "network": {
+    "allowed_hosts": ["api.simkl.com"],
+    "rate_limit": { "per_minute": 55, "respect_retry_after": true }
+  },
+
+  "auth": {
+    "kind": "custom"
+  },
+
+  "database": {
+    "tables": [],
+    "migrations": []
+  },
+
+  "settings_ui": {
+    "title": "Simkl",
+    "icon": "sync_outlined",
+    "description": "Scrobbling and Continue Watching via Simkl.com"
+  }
+}
